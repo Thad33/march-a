@@ -4,14 +4,14 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Post.css';
 
-function Post() {
+function Posts() {
   const [posts, setPosts] = useState([]);
   const [postId, setPostId] = useState('');
   const [post, setPost] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get('https://dummyjson.com/docs/posts')
+    axios.get('https://dummyjson.com/posts')
       .then(response => {
         setPosts(response.data);
       })
@@ -67,4 +67,4 @@ function Post() {
   );
 }
 
-export default Post;
+export default Posts;
